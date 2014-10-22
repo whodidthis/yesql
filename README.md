@@ -10,6 +10,7 @@ sql_query!
 The `sql_query!` macro will search given file for given query by its name
 and slot that in. **Don't forget to terminate the sql queries!**
 
+src/users.sql
 ```sql
 -- name: find_user
 SELECT *
@@ -21,15 +22,16 @@ INSERT INTO users (name)
 VALUES ($1);
 ```
 
+src/main.rs
 ```rust
 #![feature(phase)]
 
 ...
-#[phase(syntax)]
+#[phase(plugin)]
 extern crate yesql;
 
 fn main() {
     ...
-    let stmt = conn.prepare(sql_query("users.sql", "create_user"))
+    let stmt = conn.prepare(sql_query!("users.sql", "create_user"))
 ```
     
