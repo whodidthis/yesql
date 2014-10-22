@@ -1,0 +1,16 @@
+[package]
+
+name = "yesql"
+version = "0.0.1"
+authors = ["whodidthis <tonihe@gmail.com>"]
+
+[lib]
+
+name = "yesql"
+path = "src/lib.rs"
+plugin = true
+
+[[test]]
+
+name = "text"
+path = "src/test.rs"
