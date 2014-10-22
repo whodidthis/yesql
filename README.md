@@ -1,16 +1,16 @@
 yesql
 =====
 
-In appreciation of the real [Yesql](https://github.com/krisajenkins/yesql)]. 
+In appreciation of the real [Yesql](https://github.com/krisajenkins/yesql). 
 This is just a library you can insert sql queries to places with at compile time.
 
 sql_query!
 =====
 
 The `sql_query!` macro will search given file for given query by its name
-and slot that in. **Don't forget to terminate the sql queries!**
+and slot that in. **Don't forget to terminate the sql queries with a semicolon!**
 
-src/users.sql
+*src/users.sql*
 ```sql
 -- name: find_user
 SELECT *
@@ -22,7 +22,7 @@ INSERT INTO users (name)
 VALUES ($1);
 ```
 
-src/main.rs
+*src/main.rs*
 ```rust
 #![feature(phase)]
 
